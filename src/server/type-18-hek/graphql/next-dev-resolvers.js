@@ -1,5 +1,3 @@
-// const Fs = require("fs");
-// const Path = require("path");
 const _landmarks = require("../../../data/landmarks.geo.json");
 
 // let _landmarks;

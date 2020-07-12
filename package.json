@@ -11,7 +11,8 @@
     "build": "next build",
     "start": "next start -p $PORT",
     "export": "next export",
-    "be": "next build; next export"
+    "be": "next build; next export",
+    "lint": "eslint src/* --ext .js,.jsx,.ts,.tsx --no-error-on-unmatched-pattern"
   },
   "browserslist": {
     "production": [
