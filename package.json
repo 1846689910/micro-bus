@@ -1,0 +1,19 @@
+{
+  "name": "micro-bus",
+  "version": "1.0.0",
+  "description": "micro web service",
+  "main": "index.js",
+  "repository": "https://github.com/1846689910/micro-bus.git",
+  "author": "1846689910 <eric14706@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
