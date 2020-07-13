@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import PropTypes from "prop-types";
 import { ApolloServer } from "apollo-server-micro";
 import { nextDevResolvers, typeDefs } from "../server/type-18-hek/graphql";
 import { setAllowCorsHeaders } from "../server/utils";
@@ -18,11 +17,10 @@ interface GProp {
   url: string;
 }
 
-export default function Graphql({ host, method, url } : GProp) {
+export default function Graphql({ host, method, url }: GProp) {
   console.log({ host, method, url });
   return <Fragment />;
 }
-
 
 /**
  * @description for /type-18-hek of micro server
