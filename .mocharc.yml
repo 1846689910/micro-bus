@@ -6,4 +6,4 @@ require:
     "test/mocha.config.js",
     "tsconfig.test.json"
   ]
-spec: [test/**/*.spec.js, test/**/*.spec.ts]
+spec: [test/**/*.spec.js, test/**/*.spec.ts, test/**/*.spec.tsx]
