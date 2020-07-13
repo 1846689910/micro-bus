@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { ApolloServer } from "apollo-server-micro";
-import { nextDevResolvers, typeDefs } from "../server/type-18-hek/graphql";
+import nextDevResolvers from "../server/type-18-hek/graphql/next-dev-resolvers";
+import typeDefs from "../server/type-18-hek/graphql/type-defs";
 import { setAllowCorsHeaders } from "../server/utils";
 import { json, send } from "micro";
 import { OK } from "http-status";

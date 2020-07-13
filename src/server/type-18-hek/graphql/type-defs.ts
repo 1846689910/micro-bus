@@ -1,5 +1,6 @@
-const { gql } = require("apollo-boost");
-module.exports = gql`
+import { gql } from "apollo-boost";
+
+export default gql`
   type Query {
     hello: String
     landmarks: [Landmark]!
