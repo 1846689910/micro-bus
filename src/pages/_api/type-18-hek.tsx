@@ -1,20 +1,12 @@
 import React, { Fragment } from "react";
+import { handler } from "../../server/type-18-hek/graphql";
 import { setAllowCorsHeaders } from "../../server/utils";
+import BaseProps from "../../server/models/BaseProps";
 import { json, send } from "micro";
 import { OK } from "http-status";
-import nextDevResolvers from "../../server/type-18-hek/graphql/next-dev-resolvers";
-import { ApolloServer } from "apollo-server-micro";
-import typeDefs from "../../server/type-18-hek/graphql/type-defs";
 
-const apolloServer = new ApolloServer({
-  resolvers: nextDevResolvers,
-  typeDefs,
-});
-
-const handler = apolloServer.createHandler({ path: "/_api/type-18-hek" });
-
-export default function Graphql() {
-
+export default function Graphql(props: BaseProps) {
+  console.log(props);
   return <Fragment />;
 }
 
@@ -33,10 +25,12 @@ export async function getServerSideProps(context) {
   console.log(`graphql body = ${JSON.stringify(body, null, 2)}`);
   await handler(req, res);
   return {
-    // props: {
-    //   host: req.host,
-    //   method: req.method,
-    //   url: req.url,
-    // }, // will be passed to the page component as props
+    props: {
+      host: req.host,
+      method: req.method,
+      url: req.url,
+      timestamp: Date.now(),
+      body,
+    }, // will be passed to the page component as props
   };
 }
