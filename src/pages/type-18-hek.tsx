@@ -5,14 +5,8 @@ import { json, send } from "micro";
 import { OK } from "http-status";
 
 
-interface GraphqlProps {
-  host: string;
-  method: string;
-  url: string;
-}
+export default function Graphql() {
 
-export default function Graphql({ host, method, url }: GraphqlProps) {
-  console.log({ host, method, url });
   return <Fragment />;
 }
 
@@ -31,10 +25,10 @@ export async function getServerSideProps(context) {
   console.log(`graphql body = ${JSON.stringify(body, null, 2)}`);
   await handler(req, res);
   return {
-    props: {
-      host: req.host,
-      method: req.method,
-      url: req.url,
-    }, // will be passed to the page component as props
+    // props: {
+    //   host: req.host,
+    //   method: req.method,
+    //   url: req.url,
+    // }, // will be passed to the page component as props
   };
 }
