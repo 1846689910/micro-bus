@@ -11,7 +11,7 @@ const apolloServer = new ApolloServer({
   typeDefs,
 });
 
-const handler = apolloServer.createHandler({ path: "/folder/type-18-hek" });
+const handler = apolloServer.createHandler({ path: "/api/type-18-hek" });
 
 export default function Graphql() {
 
