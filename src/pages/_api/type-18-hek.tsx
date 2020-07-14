@@ -1,18 +1,12 @@
 import React, { Fragment } from "react";
-import { handler } from "../server/type-18-hek/graphql";
-import { setAllowCorsHeaders } from "../server/utils";
+import { handler } from "../../server/type-18-hek/graphql";
+import { setAllowCorsHeaders } from "../../server/utils";
+import BaseProps from "../../server/models/BaseProps";
 import { json, send } from "micro";
 import { OK } from "http-status";
 
-
-interface GraphqlProps {
-  host: string;
-  method: string;
-  url: string;
-}
-
-export default function Graphql({ host, method, url }: GraphqlProps) {
-  console.log({ host, method, url });
+export default function Type18hek(props: BaseProps) {
+  console.log(props);
   return <Fragment />;
 }
 
@@ -35,6 +29,8 @@ export async function getServerSideProps(context) {
       host: req.host,
       method: req.method,
       url: req.url,
+      timestamp: Date.now(),
+      body,
     }, // will be passed to the page component as props
   };
 }
