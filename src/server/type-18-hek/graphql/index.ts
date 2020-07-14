@@ -7,4 +7,4 @@ export const apolloServer = new ApolloServer({
   typeDefs,
 });
 
-export const handler = apolloServer.createHandler({ path: "/api/type-18-hek" });
+export const handler = apolloServer.createHandler({ path: "/type-18-hek" });

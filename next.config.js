@@ -2,7 +2,7 @@ module.exports = {
   exportPathMap: async () => {
     return {
       "/": { page: "/" },
-      "/api/type-18-hek": { page: "/type-18-hek" },
+      "/folder/type-18-hek": { page: "/folder/type-18-hek" },
     };
   },
 };
