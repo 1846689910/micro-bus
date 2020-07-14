@@ -5,7 +5,7 @@ import BaseProps from "../../server/models/BaseProps";
 import { json, send } from "micro";
 import { OK } from "http-status";
 
-export default function Graphql(props: BaseProps) {
+export default function Type18hek(props: BaseProps) {
   console.log(props);
   return <Fragment />;
 }
