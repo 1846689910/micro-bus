@@ -1,9 +1,15 @@
 import React, { Fragment } from "react";
 import { handler } from "../../server/type-18-hek/graphql";
 import { setAllowCorsHeaders } from "../../server/utils";
-import BaseProps from "../../server/models/BaseProps";
 import { json, send } from "micro";
 import { OK } from "http-status";
+
+type BaseProps = {
+  host: string;
+  method: string;
+  url: string;
+  timestamp: number;
+};
 
 export default function Type18hek(props: BaseProps) {
   console.log(props);

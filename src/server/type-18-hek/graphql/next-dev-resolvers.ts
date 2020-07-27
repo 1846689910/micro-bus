@@ -1,4 +1,4 @@
-const _landmarks = require("../../../data/landmarks.geo.json");
+import _landmarks from "../../../data/landmarks.geo.json";
 
 // let _landmarks;
 
