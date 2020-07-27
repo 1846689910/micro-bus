@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Grid, makeStyles, Typography } from "@material-ui/core";
 import Title from "../ts/home/Title";
+import APITable from "../ts/home/APITable";
 
 const useStyles = makeStyles({
   outer: {
@@ -30,7 +31,7 @@ export default function Index() {
         >
           <Title />
           <Grid container justify="center">
-            Table
+            <APITable/>
           </Grid>
         </Grid>
       </Grid>
