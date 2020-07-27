@@ -3,6 +3,7 @@ import { handler } from "../../server/type-18-hek/graphql";
 import { setAllowCorsHeaders } from "../../server/utils";
 import { json, send } from "micro";
 import { OK } from "http-status";
+import Http from "http";
 
 type BaseProps = {
   host: string;
@@ -21,7 +22,7 @@ export default function Type18hek(props: BaseProps) {
  * @param {Object} context { params, req, res, query, preview, previewData }, res is node.js res
  * @returns {Object} the component props
  */
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: { req: { host: string, method: string, url: string }, res: Http.ServerResponse }) {
   const { req, res } = context;
   setAllowCorsHeaders(res);
   if (req.method === "OPTIONS") {
