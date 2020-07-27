@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, makeStyles, Typography } from "@material-ui/core";
+import { Container, Grid, makeStyles } from "@material-ui/core";
 import Title from "../ts/home/Title";
 import APITable from "../ts/home/APITable";
 
