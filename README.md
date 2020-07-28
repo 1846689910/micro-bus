@@ -4,6 +4,8 @@
 
 micro web service by Vercel [micro](https://github.com/vercel/micro) + [next.js](https://github.com/vercel/next.js) + apollo + graphql, used for debug project demo and files hosting purpose.
 
+- [Index Page](https://micro-bus.vercel.app/)
+
 ## development
 
 - Put new api end points file in `src/pages/_api/xxx.tsx`
