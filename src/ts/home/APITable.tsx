@@ -26,7 +26,7 @@ export default function APITable() {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell>API</TableCell>
+            <TableCell>GraphQL API</TableCell>
             <TableCell>Consumer</TableCell>
             <TableCell>Status</TableCell>
           </TableRow>
