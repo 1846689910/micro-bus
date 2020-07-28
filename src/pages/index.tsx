@@ -10,24 +10,25 @@ const useStyles = makeStyles({
     margin: 0,
     padding: 0,
   },
+  inner: {
+    height: "60vh",
+  },
+  container: {
+    padding: 0,
+  },
 });
 
 export default function Index() {
   const classes = useStyles();
   return (
-    <Container maxWidth="md" style={{ padding: 0 }}>
+    <Container maxWidth="md" className={classes.container}>
       <Grid
         className={classes.outer}
         container
         alignItems="center"
         justify="center"
       >
-        <Grid
-          item
-          container
-          direction="column"
-          style={{ height: "60vh", border: "1px solid black" }}
-        >
+        <Grid item container direction="column" className={classes.inner}>
           <Title />
           <Grid container justify="center">
             <APITable />
