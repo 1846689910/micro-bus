@@ -33,7 +33,7 @@ export async function getServerSideProps(context: { req: { host: string, method:
   await handler(req, res);
   return {
     props: {
-      host: req.host,
+      host: req.host || "",
       method: req.method,
       url: req.url,
       timestamp: Date.now(),
