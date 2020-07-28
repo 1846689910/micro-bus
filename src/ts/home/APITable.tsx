@@ -7,16 +7,13 @@ import {
   TableHead,
   TableRow,
   makeStyles,
-  Link,
 } from "@material-ui/core";
+import APITableRow from "./APITableRow";
 
 const useStyles = makeStyles({
   table: {
     minWidth: "500",
   },
-  endPoint: {
-    fontSize: "14px"
-  }
 });
 
 export default function APITable() {
@@ -32,19 +29,11 @@ export default function APITable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          <TableRow>
-            <TableCell><code className={classes.endPoint}>/_api/type-18-hek</code></TableCell>
-            <TableCell>
-              <Link
-                href="https://github.com/1846689910/type-18-hek"
-                target="_blank"
-                rel="noopener"
-              >
-                type-18-hek
-              </Link>
-            </TableCell>
-            <TableCell>Status</TableCell>
-          </TableRow>
+          <APITableRow
+            api="/_api/type-18-hek"
+            linkName="type-18-hek"
+            linkHref="https://github.com/1846689910/type-18-hek"
+          />
         </TableBody>
       </Table>
     </TableContainer>

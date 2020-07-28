@@ -32,7 +32,7 @@ export default function Title() {
         alignItems="center"
       >
         <Typography variant="h5">
-          The public Apollo GraphQL server of multiple resouces
+          The public Apollo GraphQL server for multiple resouces
         </Typography>
       </Grid>
     </Fragment>

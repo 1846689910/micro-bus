@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Grid, makeStyles } from "@material-ui/core";
 import Title from "../ts/home/Title";
 import APITable from "../ts/home/APITable";
+import { ServiceContextProvider } from "../ts/ServiceContext";
 
 const useStyles = makeStyles({
   outer: {
@@ -16,25 +17,27 @@ const useStyles = makeStyles({
 export default function Index() {
   const classes = useStyles();
   return (
-    <Container maxWidth="md" style={{ padding: 0 }}>
-      <Grid
-        className={classes.outer}
-        container
-        alignItems="center"
-        justify="center"
-      >
+    <ServiceContextProvider>
+      <Container maxWidth="md" style={{ padding: 0 }}>
         <Grid
-          item
+          className={classes.outer}
           container
-          direction="column"
-          style={{ height: "60vh", border: "1px solid black" }}
+          alignItems="center"
+          justify="center"
         >
-          <Title />
-          <Grid container justify="center">
-            <APITable/>
+          <Grid
+            item
+            container
+            direction="column"
+            style={{ height: "60vh", border: "1px solid black" }}
+          >
+            <Title />
+            <Grid container justify="center">
+              <APITable />
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </ServiceContextProvider>
   );
 }
