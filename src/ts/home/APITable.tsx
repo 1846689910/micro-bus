@@ -27,7 +27,7 @@ export default function APITable() {
         <TableHead>
           <TableRow>
             <TableCell>GraphQL API</TableCell>
-            <TableCell>Consumer</TableCell>
+            <TableCell>Client</TableCell>
             <TableCell>Status</TableCell>
           </TableRow>
         </TableHead>
