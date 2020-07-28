@@ -19,19 +19,17 @@ const useStyles = makeStyles({
     fontSize: "14px",
   },
   bad: {
-    color: red[500]
+    color: red[500],
   },
   good: {
-    color: green[500]
-  }
+    color: green[500],
+  },
 });
 
 export default function APITableRow({ profile }: { profile: EndPointProfile }) {
   const classes = useStyles();
   const { api, linkName, linkHref } = profile;
-  const [curStatus, setCurStatus] = useState<number>(
-    Status.PENDING,
-  );
+  const [curStatus, setCurStatus] = useState<number>(Status.PENDING);
   useEffect(() => {
     (async () => {
       const isGood = await profile.checkStatus();
@@ -54,8 +52,8 @@ export default function APITableRow({ profile }: { profile: EndPointProfile }) {
             {linkName}
           </Link>
         ) : (
-            linkName
-          )}
+          linkName
+        )}
       </TableCell>
       <TableCell>
         <Tooltip title="update status" placement="top">
@@ -65,8 +63,8 @@ export default function APITableRow({ profile }: { profile: EndPointProfile }) {
             ) : curStatus === Status.GOOD ? (
               <CheckCircleIcon className={classes.good} />
             ) : (
-                  <CircularProgress size={20} />
-                )}
+              <CircularProgress size={20} />
+            )}
           </IconButton>
         </Tooltip>
       </TableCell>
