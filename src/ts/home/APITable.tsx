@@ -9,6 +9,7 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import APITableRow from "./APITableRow";
+import type18hekProfile from "../../server/type-18-hek/profile";
 
 const useStyles = makeStyles({
   table: {
@@ -16,24 +17,24 @@ const useStyles = makeStyles({
   },
 });
 
+const profiles = [type18hekProfile];
+
 export default function APITable() {
   const classes = useStyles();
   return (
     <TableContainer>
-      <Table className={classes.table} aria-label="simple table">
+      <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell>End Point(API)</TableCell>
+            <TableCell>API</TableCell>
             <TableCell>Consumer</TableCell>
             <TableCell>Status</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          <APITableRow
-            api="/_api/type-18-hek"
-            linkName="type-18-hek"
-            linkHref="https://github.com/1846689910/type-18-hek"
-          />
+          {
+            profiles.map((profile, i) => <APITableRow profile={profile} key={i}/>)
+          }
         </TableBody>
       </Table>
     </TableContainer>
