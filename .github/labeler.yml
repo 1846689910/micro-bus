@@ -1,3 +1,5 @@
+client:
+  - src/client/**/*
 data:
   - src/data/**/*
 API:
@@ -12,3 +14,7 @@ dependencies:
   - package.json
   - package-lock.json
   - yarn.lock
+configuration:
+  - tsconfig.json
+  - tsconfig.test.json
+  - next.config.js
