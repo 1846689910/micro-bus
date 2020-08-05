@@ -34,13 +34,13 @@ export async function getServerSideProps(context: {
   const body = req.method === "POST" ? await json(req) : {};
   console.log(`graphql body = ${JSON.stringify(body, null, 2)}`);
   await handler(req, res);
-  return {
-    props: {
-      host: req.host || "",
-      method: req.method,
-      url: req.url,
-      timestamp: Date.now(),
-      body,
-    }, // will be passed to the page component as props
-  };
+  // return {
+  //   props: {
+  //     host: req.host || "",
+  //     method: req.method,
+  //     url: req.url,
+  //     timestamp: Date.now(),
+  //     body,
+  //   }, // will be passed to the page component as props
+  // };
 }
