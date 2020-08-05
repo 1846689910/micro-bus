@@ -13,7 +13,7 @@ const apolloServer = new ApolloServer({
   introspection: true,
   playground: true,
 });
-const handler = apolloServer.createHandler({ path: "/_api/type-18-hek" });
+const handler = apolloServer.createHandler({ path: "/api/type-18-hek" });
 
 export default async (request: NowRequest, response: NowResponse) => {
   const { query, cookies, body, method, headers } = request;
