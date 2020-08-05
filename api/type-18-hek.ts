@@ -10,6 +10,8 @@ import typeDefs from "../src/server/type-18-hek/graphql/type-defs";
 const apolloServer = new ApolloServer({
   resolvers: nextDevResolvers,
   typeDefs,
+  introspection: true,
+  playground: true,
 });
 const handler = apolloServer.createHandler({ path: "/_api/type-18-hek" });
 
