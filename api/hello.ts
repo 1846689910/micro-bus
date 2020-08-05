@@ -13,6 +13,7 @@ export default async (request: NowRequest, response: NowResponse) => {
       body,
       method,
     },
+    "process.env.NODE_ENV": process.env.NODE_ENV,
   };
   return response.status(OK).send(JSON.stringify(obj, null, 2));
 };
