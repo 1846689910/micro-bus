@@ -15,7 +15,7 @@ class Type18hekProfile extends EndPointProfile {
     }).then((res) => res.ok);
 }
 export default new Type18hekProfile(
-  "/_api/type-18-hek",
-  "type-18-hek",
-  "https://github.com/1846689910/type-18-hek",
+  "/_api/type-18-next",
+  "type-18-next",
+  "https://github.com/1846689910/type-18-next",
 );

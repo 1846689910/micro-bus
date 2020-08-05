@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { handler } from "../../server/type-18-hek/graphql";
+import { handler } from "../../server/type-18-next/graphql";
 import { setAllowCorsHeaders } from "../../server/utils";
 import { json, send } from "micro";
 import { OK } from "http-status";
@@ -12,13 +12,13 @@ type BaseProps = {
   timestamp: number;
 };
 
-export default function Type18hek(props: BaseProps) {
+export default function Type18next(props: BaseProps) {
   console.log(props);
   return <Fragment />;
 }
 
 /**
- * @description for /type-18-hek of micro server
+ * @description for /type-18-next of micro server
  * @param {Object} context { params, req, res, query, preview, previewData }, res is node.js res
  * @returns {Object} the component props
  */

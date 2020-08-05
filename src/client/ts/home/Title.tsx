@@ -12,7 +12,7 @@ const useStyles = makeStyles({
 });
 
 export default function Title() {
-  const { isMobile, mediaQuery } = useContext(MediaQueryContext);
+  const { isMobile, mediaQuery } = useContext(MediaQueryContext);  // eslint-disable-line
   const classes = useStyles();
   return (
     <Fragment>
