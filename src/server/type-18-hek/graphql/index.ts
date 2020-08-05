@@ -9,3 +9,5 @@ export const apolloServer = new ApolloServer({
 });
 
 export const handler = apolloServer.createHandler({ path: profile.api });
+
+export const createHandler = (api) => apolloServer.createHandler({ path: api });

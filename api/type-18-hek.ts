@@ -1,8 +1,10 @@
 import { NowRequest, NowResponse } from "@vercel/node";
 import { json, send } from "micro";
 import { OK } from "http-status";
-import { handler } from "../src/server/type-18-hek/graphql";
+import { createHandler } from "../src/server/type-18-hek/graphql";
 import { setAllowCorsHeaders } from "../src/server/utils";
+
+const handler = createHandler("/api/type-18-hek");
 
 export default async (request: NowRequest, response: NowResponse) => {
   const { query, cookies, body, method, headers } = request;
