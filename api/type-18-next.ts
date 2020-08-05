@@ -5,6 +5,7 @@ import { handler } from "../src/server/type-18-next/graphql";
 import { setAllowCorsHeaders } from "../src/server/utils";
 
 export default async (req: NowRequest, res: NowResponse) => {
+  console.log(req);
   setAllowCorsHeaders(res);
   if (req.method === "OPTIONS") {
     return send(res, OK);
@@ -14,7 +15,6 @@ export default async (req: NowRequest, res: NowResponse) => {
   await handler(req, res);
   return {
     props: {
-      host: req.host || "",
       method: req.method,
       url: req.url,
       timestamp: Date.now(),
