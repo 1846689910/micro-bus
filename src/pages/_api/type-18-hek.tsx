@@ -4,7 +4,6 @@ import { setAllowCorsHeaders } from "../../server/utils";
 import { json, send } from "micro";
 import { OK } from "http-status";
 import Http from "http";
-import chalk from "chalk";
 
 type BaseProps = {
   host: string;
