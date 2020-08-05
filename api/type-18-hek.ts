@@ -4,22 +4,13 @@ import { OK } from "http-status";
 import { handler } from "../src/server/type-18-hek/graphql";
 import { setAllowCorsHeaders } from "../src/server/utils";
 
-export default async (req: NowRequest, res: NowResponse) => {
-  const { query, cookies, body, method, headers } = req;
-  setAllowCorsHeaders(res);
+export default async (request: NowRequest, response: NowResponse) => {
+  const { query, cookies, body, method, headers } = request;
+  setAllowCorsHeaders(response);
   if (method === "OPTIONS") {
-    res.status(OK).end();
-    return send(res, OK);
+    return response.status(OK).end();
   }
   // const body = req.method === "POST" ? await json(req) : {};
   // console.log(`graphql body = ${JSON.stringify(body, null, 2)}`);
-  await handler(req, res);
-  return {
-    props: {
-      method: req.method,
-      url: req.url,
-      timestamp: Date.now(),
-      body,
-    }, // will be passed to the page component as props
-  };
+  return await handler(request, response);
 };

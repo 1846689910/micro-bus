@@ -1,12 +1,10 @@
 import { NowRequest, NowResponse } from "@vercel/node";
-import { json, send } from "micro";
 import { OK } from "http-status";
+import Promise from "bluebird";
 
-export default (request: NowRequest, response: NowResponse) => {
+export default async (request: NowRequest, response: NowResponse) => {
   const { query, cookies, body, method, headers } = request;
-  if (method === "OPTIONS") {
-    return response.status(OK).end();
-  }
+  await Promise.delay(1000);
   const obj = {
     request: {
       headers,
