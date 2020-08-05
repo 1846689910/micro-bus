@@ -22,13 +22,16 @@ export default function Type18next(props: BaseProps) {
  * @param {Object} context { params, req, res, query, preview, previewData }, res is node.js res
  * @returns {Object} the component props
  */
-export async function getServerSideProps(context: { req: { host: string, method: string, url: string }, res: Http.ServerResponse }) {
+export async function getServerSideProps(context: {
+  req: { host: string; method: string; url: string };
+  res: Http.ServerResponse;
+}) {
   const { req, res } = context;
   setAllowCorsHeaders(res);
   if (req.method === "OPTIONS") {
     return send(res, OK);
   }
-  const body = await json(req);
+  const body = req.method === "POST" ? await json(req) : {};
   console.log(`graphql body = ${JSON.stringify(body, null, 2)}`);
   await handler(req, res);
   return {
