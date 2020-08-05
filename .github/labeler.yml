@@ -1,0 +1,14 @@
+data:
+  - src/data/**/*
+API:
+  - src/pages/_api/**/*
+pages:
+  - src/pages/*
+server:
+  - src/server/**/*
+test:
+  - test/**/*
+dependencies:
+  - package.json
+  - package-lock.json
+  - yarn.lock
