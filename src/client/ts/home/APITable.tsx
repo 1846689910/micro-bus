@@ -9,7 +9,8 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import APITableRow from "./APITableRow";
-import type18hekProfile from "../../server/type-18-hek/profile";
+import type18hekProfile from "../../../server/type-18-hek/profile";
+import type18nextProfile from "../../../server/type-18-next/profile";
 
 const useStyles = makeStyles({
   table: {
@@ -17,7 +18,7 @@ const useStyles = makeStyles({
   },
 });
 
-const profiles = [type18hekProfile];
+const profiles = [type18hekProfile, type18nextProfile];
 
 export default function APITable() {
   const classes = useStyles();
@@ -32,9 +33,9 @@ export default function APITable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {
-            profiles.map((profile, i) => <APITableRow profile={profile} key={i}/>)
-          }
+          {profiles.map((profile, i) => (
+            <APITableRow profile={profile} key={i} />
+          ))}
         </TableBody>
       </Table>
     </TableContainer>

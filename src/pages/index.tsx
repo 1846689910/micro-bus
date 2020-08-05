@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Grid, makeStyles } from "@material-ui/core";
-import Title from "../ts/home/Title";
-import APITable from "../ts/home/APITable";
+import Title from "../client/ts/home/Title";
+import APITable from "../client/ts/home/APITable";
 
 const useStyles = makeStyles({
   outer: {

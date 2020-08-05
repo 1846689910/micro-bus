@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import EndPointProfile from "../../server/EndPointProfile";
+import EndPointProfile from "../../../server/EndPointProfile";
 import {
   TableCell,
   TableRow,
