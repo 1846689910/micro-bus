@@ -1,10 +1,10 @@
 import { NowRequest, NowResponse } from "@vercel/node";
 import { OK } from "http-status";
-import Promise from "bluebird";
+import { setAllowCorsHeaders } from "../src/server/utils";
 
 export default async (request: NowRequest, response: NowResponse) => {
   const { query, cookies, body, method, headers } = request;
-  await Promise.delay(1000);
+  setAllowCorsHeaders(response);
   const obj = {
     request: {
       headers,
@@ -18,8 +18,7 @@ export default async (request: NowRequest, response: NowResponse) => {
   const html = `
   <html>
     <body>
-      <pre>
-        ${JSON.stringify(obj, null, 2)}
+      <pre>${JSON.stringify(obj, null, 2)}
       </pre>
     </body>
   </html>`;

@@ -1,24 +1,23 @@
 import { NowRequest, NowResponse } from "@vercel/node";
-import { json, send } from "micro";
 import { OK } from "http-status";
-import { handler } from "../src/server/type-18-next/graphql";
 import { setAllowCorsHeaders } from "../src/server/utils";
+import nextDevResolvers from "../src/server/type-18-next/graphql/next-dev-resolvers";
+import { ApolloServer } from "apollo-server-micro";
+import typeDefs from "../src/server/type-18-next/graphql/type-defs";
 
-export default async (req: NowRequest, res: NowResponse) => {
-  console.log(req);
-  setAllowCorsHeaders(res);
-  if (req.method === "OPTIONS") {
-    return send(res, OK);
+const apolloServer = new ApolloServer({
+  resolvers: nextDevResolvers,
+  typeDefs,
+  introspection: true,
+  playground: true,
+});
+const handler = apolloServer.createHandler({ path: "/api/type-18-next" });
+
+export default async (request: NowRequest, response: NowResponse) => {
+  const { method } = request;
+  setAllowCorsHeaders(response);
+  if (method === "OPTIONS") {
+    return response.status(OK).end();
   }
-  const body = req.method === "POST" ? await json(req) : {};
-  console.log(`graphql body = ${JSON.stringify(body, null, 2)}`);
-  await handler(req, res);
-  return {
-    props: {
-      method: req.method,
-      url: req.url,
-      timestamp: Date.now(),
-      body,
-    }, // will be passed to the page component as props
-  };
+  await handler(request, response);
 };

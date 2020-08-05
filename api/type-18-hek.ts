@@ -1,7 +1,5 @@
 import { NowRequest, NowResponse } from "@vercel/node";
-import { json, send } from "micro";
 import { OK } from "http-status";
-// import { createHandler } from "../src/server/type-18-hek/graphql";
 import { setAllowCorsHeaders } from "../src/server/utils";
 import nextDevResolvers from "../src/server/type-18-hek/graphql/next-dev-resolvers";
 import { ApolloServer } from "apollo-server-micro";
@@ -16,13 +14,10 @@ const apolloServer = new ApolloServer({
 const handler = apolloServer.createHandler({ path: "/api/type-18-hek" });
 
 export default async (request: NowRequest, response: NowResponse) => {
-  const { query, cookies, body, method, headers } = request;
+  const { method } = request;
   setAllowCorsHeaders(response);
   if (method === "OPTIONS") {
     return response.status(OK).end();
   }
-  // const body = req.method === "POST" ? await json(req) : {};
-  // console.log(`graphql body = ${JSON.stringify(body, null, 2)}`);
   await handler(request, response);
-  // return response.status(OK).send(JSON.stringify(body, null, 2));
 };
