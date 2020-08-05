@@ -9,7 +9,7 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import APITableRow from "./APITableRow";
-import type18hekProfile from "../../server/type-18-hek/profile";
+import type18hekProfile from "../../../server/type-18-hek/profile";
 
 const useStyles = makeStyles({
   table: {

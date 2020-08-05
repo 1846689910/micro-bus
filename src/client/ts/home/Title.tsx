@@ -1,6 +1,6 @@
 import React, { Fragment, useContext } from "react";
 import { Grid, Typography, makeStyles, Link } from "@material-ui/core";
-import MediaQueryContext from "../../ts/MediaQueryContext";
+import MediaQueryContext from "../MediaQueryContext";
 
 const useStyles = makeStyles({
   grid: {
