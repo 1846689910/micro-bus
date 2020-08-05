@@ -15,5 +15,13 @@ export default async (request: NowRequest, response: NowResponse) => {
     },
     "process.env.NODE_ENV": process.env.NODE_ENV,
   };
-  return response.status(OK).send(JSON.stringify(obj, null, 2));
+  const html = `
+  <html>
+    <body>
+      <pre>
+        ${JSON.stringify(obj, null, 2)}
+      </pre>
+    </body>
+  </html>`;
+  return response.status(OK).send(html);
 };
