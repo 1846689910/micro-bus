@@ -13,5 +13,13 @@ micro web service by Vercel [micro](https://github.com/vercel/micro) + [next.js]
   - `context.req` is instance of [http.incomingMessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
   - `context.res` is instance of [http.serverResponse](https://nodejs.org/api/http.html#http_class_http_serverresponse)
 
+## production
+
+- Put new api end points file in `api/xxx.ts`
+
+## print request
+
+- send query to `https://micro-bus.vercel.app/api/print-request`
+
 [travis-micro-bus]: https://travis-ci.org/1846689910/micro-bus.svg?branch=master
 [travis-micro-bus-build]: https://travis-ci.org/1846689910/micro-bus
