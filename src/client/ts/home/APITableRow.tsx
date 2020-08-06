@@ -15,9 +15,9 @@ import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import CancelIcon from "@material-ui/icons/Cancel";
 
 const useStyles = makeStyles({
-  endPoint: {
-    fontSize: "14px",
-  },
+  // endPoint: {
+  //   fontSize: "14px",
+  // },
   bad: {
     color: red[500],
   },
@@ -44,7 +44,9 @@ export default function APITableRow({ profile }: { profile: EndPointProfile }) {
   return (
     <TableRow>
       <TableCell>
-        <code className={classes.endPoint}>{api}</code>
+        <Link href={api} target="_blank" rel="noopener">
+          {api}
+        </Link>
       </TableCell>
       <TableCell>
         {linkHref ? (
