@@ -23,8 +23,9 @@ export async function getServerSideProps(context: {
   if (req.method === "OPTIONS") {
     return send(res, OK);
   }
+
   const body = req.method === "POST" ? await json(req) : {};
-  console.log(`graphql body = ${JSON.stringify(body, null, 2)}`);
+  // console.log(`graphql body = ${JSON.stringify(body, null, 2)}`);
   await handler(req, res);
   return {
     props: {},
