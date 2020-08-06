@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import EndPointProfile from "../../../server/EndPointProfile";
 import {
   TableCell,
@@ -13,11 +13,10 @@ import { red, green } from "@material-ui/core/colors";
 import { Status } from "./utils";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import CancelIcon from "@material-ui/icons/Cancel";
+import MediaQueryContext from "../MediaQueryContext";
+import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 
 const useStyles = makeStyles({
-  // endPoint: {
-  //   fontSize: "14px",
-  // },
   bad: {
     color: red[500],
   },
@@ -26,7 +25,29 @@ const useStyles = makeStyles({
   },
 });
 
+type ClientProps = {
+  linkHref?: string;
+  linkName: string;
+  isMobile: boolean;
+};
+
+const Client = ({ linkHref, linkName, isMobile }: ClientProps) => {
+  if (!linkHref) return <span>linkName</span>;
+  return isMobile ? (
+    <IconButton size="small">
+      <Link href={linkHref} target="_blank" rel="noopener">
+        <VerifiedUserIcon />
+      </Link>
+    </IconButton>
+  ) : (
+    <Link href={linkHref} target="_blank" rel="noopener">
+      {linkName}
+    </Link>
+  );
+};
+
 export default function APITableRow({ profile }: { profile: EndPointProfile }) {
+  const { isMobile } = useContext(MediaQueryContext);
   const classes = useStyles();
   const { api, linkName, linkHref } = profile;
   const [curStatus, setCurStatus] = useState<number>(Status.PENDING);
@@ -49,13 +70,7 @@ export default function APITableRow({ profile }: { profile: EndPointProfile }) {
         </Link>
       </TableCell>
       <TableCell>
-        {linkHref ? (
-          <Link href={linkHref} target="_blank" rel="noopener">
-            {linkName}
-          </Link>
-        ) : (
-          linkName
-        )}
+        <Client {...{ linkName, linkHref, isMobile }} />
       </TableCell>
       <TableCell>
         <Tooltip title="update status" placement="top">
