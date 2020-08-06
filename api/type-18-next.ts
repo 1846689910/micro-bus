@@ -1,17 +1,7 @@
 import { NowRequest, NowResponse } from "@vercel/node";
 import { OK } from "http-status";
 import { setAllowCorsHeaders } from "../src/server/utils";
-import nextDevResolvers from "../src/server/type-18-next/graphql/next-dev-resolvers";
-import { ApolloServer } from "apollo-server-micro";
-import typeDefs from "../src/server/type-18-next/graphql/type-defs";
-
-const apolloServer = new ApolloServer({
-  resolvers: nextDevResolvers,
-  typeDefs,
-  introspection: true,
-  playground: true,
-});
-const handler = apolloServer.createHandler({ path: "/api/type-18-next" });
+import { handler } from "../src/server/type-18-hek/graphql";
 
 export default async (request: NowRequest, response: NowResponse) => {
   const { method } = request;
