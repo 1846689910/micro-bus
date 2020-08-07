@@ -2,7 +2,7 @@ import React from "react";
 import App from "next/app";
 import { Provider } from "react-redux";
 import { MediaQueryProvider } from "../client/ts/MediaQueryContext";
-import { configureStore } from "../server/settings/store";
+import { configureStore } from "../client/ts/settings/store";
 
 export default class _App extends App {
   render() {

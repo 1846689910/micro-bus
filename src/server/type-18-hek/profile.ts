@@ -18,8 +18,9 @@ const api =
   process.env.NODE_ENV !== "production"
     ? "/_api/type-18-hek"
     : "/api/type-18-hek";
-export default new Type18hekProfile(
+const type18hekProfile = new Type18hekProfile(
   api,
   "type-18-hek",
   "https://github.com/1846689910/type-18-hek",
 );
+export default type18hekProfile;
