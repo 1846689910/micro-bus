@@ -1,4 +1,4 @@
-import EndPointProfile from "../EndPointProfile";
+import EndPointProfile from "../../models/EndPointProfile";
 class Type18hekProfile extends EndPointProfile {
   /**
    * @description check if the graphql end point status is good
