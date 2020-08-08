@@ -18,9 +18,9 @@ const api =
   process.env.NODE_ENV !== "production"
     ? "/_api/personal-page"
     : "/api/personal-page";
-const type18hekProfile = new PersonalPageProfile(
+const personalPageProfile = new PersonalPageProfile(
   api,
   "personal-page",
   "https://github.com/1846689910/personal-page",
 );
-export default type18hekProfile;
+export default personalPageProfile;
