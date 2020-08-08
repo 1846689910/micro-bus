@@ -10,7 +10,7 @@ class PersonalPageProfile extends EndPointProfile {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        query: "{ hello }",
+        query: "{ name }",
       }),
     }).then((res) => res.ok);
 }
