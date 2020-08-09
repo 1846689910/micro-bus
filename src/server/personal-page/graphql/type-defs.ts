@@ -2,6 +2,7 @@ import { gql } from "apollo-boost";
 
 export default gql`
   type Query {
+    hello: String!
     name: String!
     title: String!
     summary: [String!]!

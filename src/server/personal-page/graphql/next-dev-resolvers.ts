@@ -2,6 +2,7 @@ import { webSkills, dataSkills, name, title, summary } from "../data";
 
 export default {
   Query: {
+    hello: () => "Hello, personal-page is now boosted by Apollo + GraphQL",
     name: () => name,
     title: () => title,
     summary: () => summary,
